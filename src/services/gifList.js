@@ -25,7 +25,6 @@ export const getGifList = async () => {
     }
   }
   setGifListToLocalStorage(filteredGifList);
-  console.log(filteredGifList);
   return filteredGifList;
 };
 

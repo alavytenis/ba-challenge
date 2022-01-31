@@ -47,16 +47,23 @@ body {
 .header {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.2);
+  p {
+    color: white;
+    margin: 0;
+  }
+
+  .btn {
+    background: #4327f5;
+    color: white;
+    padding: 4px;
+    border-radius: 5px;
+    margin: 5px;
+    border-color: none;
+  }
 }
-.btn {
-  background: #4327f5;
-  color: white;
-  padding: 4px;
-  border-radius: 5px;
-  margin: 5px;
-  border-color: none;
-}
+
 .container {
   display: flex;
   flex-wrap: wrap;

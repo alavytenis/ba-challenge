@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { loadGifs } from "../../redux/slices/gifSlice";
 
-import { getGifList } from "../../services/gif";
+import { getGifList } from "../../services/gifList";
 
 const Button = () => {
   const dispatch = useDispatch();
