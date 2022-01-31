@@ -14,9 +14,8 @@ const GifCard = (props) => {
     updateGifInLocalStorage(props.url);
   };
   return (
-    <div className="gif-item">
+    <div className="gif-item" onClick={handleGifClick}>
       <img
-        onClick={handleGifClick}
         src={props.url}
         alt={props.title}
         onMouseEnter={() => setIsShown(true)}
@@ -25,19 +24,13 @@ const GifCard = (props) => {
       {props.isLocked ? (
         <>
           <FontAwesomeIcon
-            onClick={handleGifClick}
             className="icon"
             icon={faLock}
             onMouseEnter={() => setIsShown(true)}
             onMouseLeave={() => setIsShown(false)}
           />
           {isShown ? (
-            <span
-              onMouseEnter={() => setIsShown(true)}
-              onMouseLeave={() => setIsShown(false)}
-              onClick={handleGifClick}
-              className="icon-text"
-            >
+            <span onMouseEnter={() => setIsShown(true)} className="icon-text">
               Click to unlock
             </span>
           ) : (
@@ -49,14 +42,12 @@ const GifCard = (props) => {
           {isShown ? (
             <>
               <FontAwesomeIcon
-                onClick={handleGifClick}
                 className="icon"
                 icon={faLockOpen}
                 onMouseEnter={() => setIsShown(true)}
                 onMouseLeave={() => setIsShown(false)}
               />
               <span
-                onClick={handleGifClick}
                 className="icon-text"
                 onMouseEnter={() => setIsShown(true)}
                 onMouseLeave={() => setIsShown(false)}
