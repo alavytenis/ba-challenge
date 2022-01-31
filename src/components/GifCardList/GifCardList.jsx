@@ -6,7 +6,12 @@ const GifCardList = () => {
   return (
     <div className="container">
       {gifList.map((gif) => (
-        <GifCard key={gif.id} url={gif.url} alt={gif.title} />
+        <GifCard
+          key={gif.id}
+          url={gif.url}
+          isLocked={gif.isLocked}
+          alt={gif.title}
+        />
       ))}
     </div>
   );
