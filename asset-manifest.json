@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ba-challenge/static/css/main.dd03dfbd.css",
+    "main.js": "/ba-challenge/static/js/main.63b6abd0.js",
+    "static/js/787.d59e6658.chunk.js": "/ba-challenge/static/js/787.d59e6658.chunk.js",
+    "index.html": "/ba-challenge/index.html",
+    "main.dd03dfbd.css.map": "/ba-challenge/static/css/main.dd03dfbd.css.map",
+    "main.63b6abd0.js.map": "/ba-challenge/static/js/main.63b6abd0.js.map",
+    "787.d59e6658.chunk.js.map": "/ba-challenge/static/js/787.d59e6658.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dd03dfbd.css",
+    "static/js/main.63b6abd0.js"
+  ]
+}
