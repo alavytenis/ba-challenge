@@ -6,10 +6,17 @@ import { GiphyFetch } from "@giphy/js-fetch-api";
 
 export const getGifList = async () => {
   const trendingGifList = await getTrendingGifList();
+  trendingGifList.sort((a, b) =>
+    a.import_datetime > b.import_datetime
+      ? 1
+      : b.import_datetime > a.import_datetime
+      ? -1
+      : 0
+  );
   let filteredGifList = [];
   let retrievedGifList = getGifListFromLocalStorage();
 
-  for (let i = 0; i < trendingGifList.data.length; i++) {
+  for (let i = 0; i < trendingGifList.length; i++) {
     if (
       retrievedGifList !== [] &&
       retrievedGifList[i] &&
@@ -18,9 +25,9 @@ export const getGifList = async () => {
       filteredGifList[i] = retrievedGifList[i];
     } else {
       filteredGifList[i] = {};
-      filteredGifList[i].url = trendingGifList.data[i].images.downsized.url;
-      filteredGifList[i].id = trendingGifList.data[i].id;
-      filteredGifList[i].title = trendingGifList.data[i].title;
+      filteredGifList[i].url = trendingGifList[i].images.downsized.url;
+      filteredGifList[i].id = trendingGifList[i].id;
+      filteredGifList[i].title = trendingGifList[i].title;
       filteredGifList[i].isLocked = false;
     }
   }
@@ -37,5 +44,6 @@ export const getTrendingGifList = async () => {
     offset: offsetNumber,
     rating: "g",
   });
-  return res;
+
+  return res.data;
 };
