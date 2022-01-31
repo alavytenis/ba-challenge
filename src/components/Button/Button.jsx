@@ -11,7 +11,11 @@ const Button = () => {
     await dispatch(loadGifs(filteredGifList));
   };
 
-  return <button onClick={handleSubmit}>Submit</button>;
+  return (
+    <button className="btn" onClick={handleSubmit}>
+      Click here
+    </button>
+  );
 };
 
 export default Button;

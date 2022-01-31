@@ -1,7 +1,62 @@
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+// Small devices
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
 .App {
   text-align: center;
 }
-
+body {
+  background-color: rgb(42, 43, 44);
+}
+.header {
+  display: flex;
+  justify-content: flex-end;
+  box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.2);
+}
+.btn {
+  background: #4327f5;
+  color: white;
+  padding: 4px;
+  border-radius: 5px;
+  margin: 5px;
+  border-color: none;
+}
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -9,9 +64,23 @@
 }
 
 .gif-item {
-  flex: 1 0 21%;
+  margin: 20px;
+  @include sm {
+    flex: 1 0 90%;
+  }
+  @include md {
+    flex: 1 0 40%;
+  }
+  @include lg {
+    flex: 1 0 25%;
+  }
+  @include xl {
+    flex: 1 0 21%;
+  }
 }
 
 img {
-  width: 398px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

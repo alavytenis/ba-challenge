@@ -2,7 +2,7 @@ import Button from "../Button/Button";
 
 const Header = () => {
   return (
-    <div>
+    <div className="header">
       <Button></Button>
     </div>
   );
