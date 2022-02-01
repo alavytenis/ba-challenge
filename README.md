@@ -11,5 +11,6 @@
 - use styled-components
 - create light and dark themes
 - loading animation on fetch
+- add animations
 
 Created by Vytenis Alaburda

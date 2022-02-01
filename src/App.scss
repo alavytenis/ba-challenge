@@ -7,7 +7,7 @@ $screen-lg-min: 992px;
 $screen-xl-min: 1200px;
 
 @mixin sm {
-  @media (min-width: #{$screen-sm-min}) {
+  @media (max-width: #{$screen-md-min}) {
     @content;
   }
 }
@@ -37,22 +37,72 @@ body {
   background-color: rgb(42, 43, 44);
 }
 .header {
+  @include sm {
+    justify-content: center;
+  }
+  @include md {
+    justify-content: center;
+  }
+  @include lg {
+    justify-content: flex-end;
+  }
+  @include xl {
+    justify-content: flex-end;
+  }
+
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.2);
   p {
     color: white;
     margin: 0;
+
+    @include sm {
+      display: none;
+    }
+    @include md {
+      display: none;
+    }
+
+    @include lg {
+      display: block;
+    }
+    @include xl {
+      display: block;
+    }
   }
 
   .btn {
+    @include sm {
+      padding: 10px;
+      border-radius: 5px;
+      margin: 20px;
+      border-color: none;
+      font-size: 24px;
+    }
+    @include md {
+      padding: 10px;
+      border-radius: 5px;
+      margin: 20px;
+      border-color: none;
+      font-size: 24px;
+    }
+
+    @include lg {
+      padding: 4px;
+      border-radius: 5px;
+      margin: 5px;
+      border-color: none;
+    }
+    @include xl {
+      font-size: 14px;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 5px;
+      border-color: none;
+    }
     background: #4327f5;
     color: white;
-    padding: 4px;
-    border-radius: 5px;
-    margin: 5px;
-    border-color: none;
   }
 }
 
@@ -94,6 +144,7 @@ body {
     position: absolute;
     bottom: 20px;
     left: 20px;
+    text-shadow: -7px 8px 2px #c54040, -3px 5px #c74b16;
   }
 
   & .icon-text {
