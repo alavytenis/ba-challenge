@@ -10,7 +10,7 @@ function App() {
   const dispatch = useDispatch();
 
   const spaceEventListener = async () => {
-    document.addEventListener("keyup", async (event) => {
+    document.addEventListener("keydown", async (event) => {
       if (event.code === "Space") {
         event.preventDefault();
         const filteredGifList = await getGifList();
