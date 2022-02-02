@@ -1,6 +1,4 @@
-export interface GifList {
-  [key: string]: GifItem;
-}
+export interface GifItems extends Array<GifItem> {}
 
 export interface GifItem {
   url: string;

@@ -5,13 +5,14 @@ import {
 import { GiphyFetch } from "@giphy/js-fetch-api";
 
 export const getGifList = async () => {
-  const trendingGifList = await getTrendingGifList();
-  trendingGifList.sort((a, b) =>
-    a.import_datetime > b.import_datetime
-      ? 1
-      : b.import_datetime > a.import_datetime
-      ? -1
-      : 0
+  const trendingGifList: any | undefined = await getTrendingGifList();
+  trendingGifList.sort(
+    (a: { import_datetime: number }, b: { import_datetime: number }) =>
+      a.import_datetime > b.import_datetime
+        ? 1
+        : b.import_datetime > a.import_datetime
+        ? -1
+        : 0
   );
   let filteredGifList = [];
   let retrievedGifList = getGifListFromLocalStorage();
@@ -36,7 +37,7 @@ export const getGifList = async () => {
 };
 
 export const getTrendingGifList = async () => {
-  const apiAddress: any | undefined = process.env.REACT_APP_GIPHY_KEY;
+  const apiAddress: string = process.env.REACT_APP_GIPHY_KEY || "";
   const gf = new GiphyFetch(apiAddress);
   const offsetNumber = Math.floor(Math.random() * (1500 - 1) + 1);
 

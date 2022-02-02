@@ -1,16 +1,21 @@
 import GifCard from "../GifCard/GifCard";
 import { useSelector } from "react-redux";
+import { GifItems, GifItem } from "../../interfaces/GifListType";
+import { RootState } from "../../redux/store";
 
 const GifCardList = () => {
-  const gifList = useSelector((state: any) => state.gifList.gifList);
+  const gifList: GifItems = useSelector(
+    (state: RootState) => state.gifList.gifList
+  );
   return (
     <div className="container">
-      {gifList.map((gif: any) => (
+      {gifList.map((gif: GifItem) => (
         <GifCard
           key={gif.id}
           url={gif.url}
           isLocked={gif.isLocked}
-          alt={gif.title}
+          title={gif.title}
+          id={gif.id}
         />
       ))}
     </div>

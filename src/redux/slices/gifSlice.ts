@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { GifItems } from "../../interfaces/GifListType";
 
 export interface GifListState {
-  gifList: any;
+  gifList: GifItems;
 }
 
 const initialState = {
@@ -14,7 +15,7 @@ const gifListSlice = createSlice({
   reducers: {
     toggleLock: (_state, action) => {
       const gifIndex = _state.gifList.findIndex(
-        (gif: { url: any }) => gif.url === action.payload
+        (gif) => gif.url === action.payload
       );
       _state.gifList[gifIndex].isLocked = !_state.gifList[gifIndex].isLocked;
     },
