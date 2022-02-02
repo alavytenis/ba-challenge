@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLockOpen, faLock } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
-const GifCard = (props) => {
+const GifCard = (props: any) => {
   const dispatch = useDispatch();
   const [isShown, setIsShown] = useState(false);
 
