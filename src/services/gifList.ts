@@ -36,7 +36,8 @@ export const getGifList = async () => {
 };
 
 export const getTrendingGifList = async () => {
-  const gf = new GiphyFetch(process.env.REACT_APP_GIPHY_KEY);
+  const apiAddress: any | undefined = process.env.REACT_APP_GIPHY_KEY;
+  const gf = new GiphyFetch(apiAddress);
   const offsetNumber = Math.floor(Math.random() * (1500 - 1) + 1);
 
   const res = await gf.trending({

@@ -1,8 +1,9 @@
+import { FC, ReactElement } from "react";
 import { useDispatch } from "react-redux";
 import { loadGifs } from "../../redux/slices/gifSlice";
 import { getGifList } from "../../services/gifList";
 
-const Button = () => {
+const Button: FC = (): ReactElement => {
   const dispatch = useDispatch();
 
   const handleSubmit = async () => {
