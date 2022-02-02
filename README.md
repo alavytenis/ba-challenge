@@ -1,9 +1,5 @@
 # ba-challenge
 
-# TODO for the challenge
-
-- better mobile-friendly responsitivity
-
 # TODO for fun/portfolio
 
 - change design and use material UI for react
@@ -16,5 +12,6 @@
 - unlimited scroll
 - add card component for each gif for it to look like polaroid picture
 - add routing. Add a few pages for different kinds of gifs
-
+- add linter 
+ 
 Created by Vytenis Alaburda
