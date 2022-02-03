@@ -4,8 +4,9 @@ import { updateGifInLocalStorage } from "../../services/localStorage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLockOpen, faLock } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import { GifItem } from "../../interfaces/GifListType";
 
-const GifCard = (props) => {
+const GifCard = (props: GifItem) => {
   const dispatch = useDispatch();
   const [isShown, setIsShown] = useState(false);
 

@@ -1,10 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { GifItems } from "../../interfaces/GifListType";
+
+export interface GifListState {
+  gifList: GifItems;
+}
 
 const initialState = {
   gifList: [],
-};
+} as GifListState;
 
-const lockedGifListSlice = createSlice({
+const gifListSlice = createSlice({
   name: "gifList",
   initialState,
   reducers: {
@@ -20,5 +25,5 @@ const lockedGifListSlice = createSlice({
   },
 });
 
-export const { toggleLock, loadGifs } = lockedGifListSlice.actions;
-export default lockedGifListSlice.reducer;
+export const { toggleLock, loadGifs } = gifListSlice.actions;
+export default gifListSlice.reducer;
