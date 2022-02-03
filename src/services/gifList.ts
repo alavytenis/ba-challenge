@@ -14,8 +14,8 @@ export const getGifList = async () => {
         ? -1
         : 0
   );
-  let filteredGifList = [];
-  let retrievedGifList = getGifListFromLocalStorage();
+  const filteredGifList = [];
+  const retrievedGifList = getGifListFromLocalStorage();
 
   for (let i = 0; i < trendingGifList.length; i++) {
     if (

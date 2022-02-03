@@ -1,4 +1,4 @@
-export interface GifItems extends Array<GifItem> {}
+export type GifItems = Array<GifItem>;
 
 export interface GifItem {
   url: string;
